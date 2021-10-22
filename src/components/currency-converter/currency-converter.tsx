@@ -45,17 +45,17 @@ export class CurrencyConverter {
       : null;
   }
 
-  renderComponent() {
+  render() {
     let output = this.format.replace('{{value}}', this.renderCurrency()).replace('{{to}}', this.to);
 
     return h(Fragment, null, output);
   }
 
-  render() {
-    return (
-      <Host>
-        <slot>{this.renderComponent()}</slot>
-      </Host>
-    );
-  }
+  // render() {
+  //   return (
+  //     <Host>
+  //       <slot>{this.renderComponent()}</slot>
+  //     </Host>
+  //   );
+  // }
 }
