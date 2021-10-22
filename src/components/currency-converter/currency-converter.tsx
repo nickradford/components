@@ -1,4 +1,4 @@
-import { Component, Host, h, Prop, Fragment } from '@stencil/core';
+import { Component, h, Prop, Fragment } from '@stencil/core';
 
 @Component({
   tag: 'currency-converter',
@@ -50,12 +50,4 @@ export class CurrencyConverter {
 
     return h(Fragment, null, output);
   }
-
-  // render() {
-  //   return (
-  //     <Host>
-  //       <slot>{this.renderComponent()}</slot>
-  //     </Host>
-  //   );
-  // }
 }
