@@ -7,6 +7,7 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface CurrencyConverter {
+        "format": string;
         "from": string;
         "roundTo": number;
         "to": string;
@@ -47,6 +48,7 @@ declare global {
 }
 declare namespace LocalJSX {
     interface CurrencyConverter {
+        "format"?: string;
         "from"?: string;
         "roundTo"?: number;
         "to"?: string;

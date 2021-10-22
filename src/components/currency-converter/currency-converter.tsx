@@ -1,4 +1,4 @@
-import { Component, Host, h, Prop } from '@stencil/core';
+import { Component, Host, h, Prop, Fragment } from '@stencil/core';
 
 @Component({
   tag: 'currency-converter',
@@ -10,6 +10,7 @@ export class CurrencyConverter {
   @Prop() to: string = 'USD';
   @Prop() roundTo: number = 2;
   @Prop() value: number = 20;
+  @Prop() format: string = '{{value}}';
 
   convertedValue: number;
 
@@ -44,10 +45,16 @@ export class CurrencyConverter {
       : null;
   }
 
+  renderComponent() {
+    let output = this.format.replace('{{value}}', this.renderCurrency()).replace('{{to}}', this.to);
+
+    return h(Fragment, null, output);
+  }
+
   render() {
     return (
       <Host>
-        <slot>{this.renderCurrency()}</slot>
+        <slot>{this.renderComponent()}</slot>
       </Host>
     );
   }

@@ -18,5 +18,10 @@
       USD -> MXN:
       <div style="display: flex; gap: 8px">Approx <currency-converter from="USD" to="MXN" value="800" round-to="0"></currency-converter></div>
     </div>
+
+    <div>
+      USD -> MXN, fmt="~ {{value}} {{to}}":
+      <div style="display: flex; gap: 8px"><currency-converter from="USD" to="MXN" value="800" round-to="0" format="~{{value}}"></currency-converter></div>
+    </div>
   </body>
 </html>
